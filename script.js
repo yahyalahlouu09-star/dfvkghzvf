@@ -1,20 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.form-group button');
+const nom =document .getElementById("name");
+const email =document .getElementById("email");
+const password =document .getElementById("password");
 
-  buttons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
-      const input = button.previousElementSibling;
-      const value = input.value.trim();
+const submit =document .getElementById("submit");
 
-      if (!value) {
-        alert('Veuillez remplir votre nom et votre email.');
+console.log(nom);
+console.log(email);
+console.log(password);
+
+const SavedUser = JSON.parse(localStorage.getItem("user")) || 'Null';
+
+if (SavedUser !== 'Null') {
+    nom.value = SavedUser.name || '';
+    email.value = SavedUser.email || '';
+    password.value = SavedUser.password || '';
+}
+
+const user = {
+    name: nom.value,
+    email: email.value,
+    password: password.value
+};
+
+localStorage.setItem("user", JSON.stringify(user));
+
+submit.addEventListener("click", function(event){
+
+    
+    if (nom.value.trim() === "") {
+        alert("Please enter your name.");
         return;
-      }
+    }
+    else if (!email.value.includes("@")) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+    else if (password.value.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+    }
+    
+    else {         alert("Form submitted successfully!");
+    }
+    event.preventDefault();
+    console.log("Button clicked");
+    console.log(nom.value);
+    console.log(email.value);
+    console.log(password.value);
 
-      alert(`Le nom saisie : ${value}`);
-      alert(`L'email saisie : ${value}`);
-      input.value = '';
-    });
-  });
+    alert("Name: " + nom.value + "\nEmail: " + email.value + "\nPassword: " + password.value);
 });
