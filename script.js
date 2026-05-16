@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      alert(`Vous avez saisi : ${value}`);
+      alert(`Le nom saisie : ${value}`);
+      alert(`L'email saisie : ${value}`);
       input.value = '';
     });
   });
