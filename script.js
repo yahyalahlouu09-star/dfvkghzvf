@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const value = input.value.trim();
 
       if (!value) {
-        alert('Veuillez remplir le champ.');
+        alert('Veuillez remplir votre nom et votre email.');
         return;
       }
 
