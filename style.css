@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #3f62a8 0%, #86a8e7 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.container {
+    width: min(100%, 420px);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    padding: 32px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+}
+
+h1 {
+    margin: 0 0 28px;
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+input:focus {
+    border-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.24);
+    transform: translateY(-1px);
+}
+
+button {
+    padding: 14px 18px;
+    border: none;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #2d3a5f;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    background: #f0f4ff;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.feedback {
+    min-height: 28px;
+    margin-bottom: 18px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    text-align: center;
+    opacity: 0.95;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.feedback.success {
+    background: rgba(255, 255, 255, 0.22);
+    color: #e7f1ff;
+}
+
+.feedback.error {
+    background: rgba(255, 80, 96, 0.18);
+    color: #ffe4e4;
+}
+
+.input-error {
+    border-color: rgba(255, 100, 104, 0.9);
+}
